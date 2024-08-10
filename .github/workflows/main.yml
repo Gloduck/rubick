@@ -63,3 +63,9 @@ jobs:
           npm run release
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
+      # Step to upload build artifacts
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: electron-app-build
+          path: build/**  # 根据你的实际输出目录调整路径
