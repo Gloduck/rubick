@@ -4,6 +4,9 @@ const path = require('path');
 module.exports = {
   // transpileDependencies: ["fix-path"],
   configureWebpack: {
+    node: {
+      __dirname: true, // 允许在 Node.js 中使用 __dirname
+    },
     resolve: {
       alias: {
         '@': path.join(__dirname, './src'),
